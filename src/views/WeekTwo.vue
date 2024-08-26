@@ -1,44 +1,45 @@
 <template>
-  <div>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <div class="m-3">
     <h2>註冊</h2>
-    <input type="email" placeholder="Email" v-model="signupField.email" />
-    <input type="text" placeholder="Password" v-model="signupField.password" />
-    <input type="text" placeholder="nickname" v-model="signupField.nickname" />
+    <input type="email" class="me-1" placeholder="Email" v-model="signupField.email" />
+    <input type="password" class="me-1" placeholder="Password" v-model="signupField.password" />
+    <input type="text" class="me-1" placeholder="nickname" v-model="signupField.nickname" />
     <button type="button" @click="signup" class="signup">註冊</button>
     <br />{{ messageSignUp }}
   </div>
-  <div>
+  <div class="m-3">
     <h2>登入</h2>
-    <input type="email" placeholder="Email" v-model="signInField.email" />
-    <input type="text" placeholder="Password" v-model="signInField.password" />
+    <input type="email" class="me-1" placeholder="Email" v-model="signInField.email" />
+    <input type="password" class="me-1" placeholder="Password" v-model="signInField.password" />
     <button type="button" @click="signIn" class="signin">登入</button>
     <br />{{ messageSignIn }}
   </div>
-  <div>
+  <div class="m-3">
     <h2>驗證</h2>
     <button type="button" @click="checkOut">驗證</button>
     <br />{{ messageCheckOut }}
   </div>
-  <div>
+  <div class="m-3">
     <h2>登出</h2>
     <button type="button" @click="signOut">登出</button>
     <br />{{ messageSignOut }}
   </div>
-  <div class="todo-list">
+  <div class="todo-list m-3">
     <div class="inner">
       <div class="header">
         <h3>{{ nicknameSignIn }} 的待辦事項</h3>
       </div>
       <div class="add-new">
-        <input v-model="newTodo" placeholder="New Todo" />
+        <input class="me-1" v-model="newTodo" placeholder="New Todo" />
         <button type="button" @click="addTodo">新增</button>
       </div>
       <ul>
         <li v-for="(todo, index) in todos" :key="index">
           <input type="checkbox" :checked="todo.status" @change="toggleStatus(todo.id)" />
           <p :class="['todo', { complete: todo.status }]">{{ todo.content }}</p>
-          <input type="text" placeholder="更新值" @change="updateTodoEdit($event, todo.id)" />
-          <button type="button" @click="deleteTodo(todo.id)">刪除</button>
+          <input type="text" class="me-1" placeholder="更新值" @change="updateTodoEdit($event, todo.id)" />
+          <button type="button" class="me-1" @click="deleteTodo(todo.id)">刪除</button>
           <button type="button" @click="updateTodo(todo.id)">更新</button>
         </li>
       </ul>

@@ -103,6 +103,7 @@ function editNo(item) {
 </script>
 
 <template>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <table class="fortable">
     <thead>
       <tr>
@@ -156,11 +157,12 @@ function editNo(item) {
 <style scoped>
 .fortable {
   background-color: rgb(255, 255, 255);
-  width: 100%;
+  width: 90%;
   line-height: 30px;
   border-collapse: collapse;
   border: 1px solid rgb(193, 221, 252);
   padding: 10px;
+  margin: auto;
   text-align: center;
 }
 .fortable th {
